@@ -1,8 +1,6 @@
 package job.bespalov.statistic;
 
-import job.bespalov.calc.CalcFirstFile;
-import job.bespalov.calc.CalcSecondFile;
-import job.bespalov.calc.CalcThirdFile;
+import job.bespalov.calc.CalcFile;
 import job.bespalov.jd.DatabaseByAct;
 import job.bespalov.repository.ResultRepository;
 
@@ -10,12 +8,9 @@ import job.bespalov.repository.ResultRepository;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import java.lang.reflect.Method;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListResults {
@@ -32,14 +27,12 @@ public class ListResults {
         actionByDatabase = new DatabaseByAct();
         title = new ArrayList<>();
         list.clear();
-        list.add(new CalcFirstFile());
-        list.add(new CalcSecondFile());
-        list.add(new CalcThirdFile());
+        list.add(new CalcFile());
     }
 
     public void showResult() throws IOException {
         int x=1;
-        for (int i = 0; i < reading.getPaths().size(); i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("File " + x + "\n");
             BufferedReader bufferedReader = Files.newBufferedReader(reading.getPaths().get(i));
             for (ResultRepository resultRepository : list) {

@@ -11,15 +11,15 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalcFirstFileTest {
-    private CalcFirstFile calcFirstFile;
+    private CalcFile calcFirstFile;
 
     public CalcFirstFileTest() {
-        calcFirstFile=new CalcFirstFile();
+        calcFirstFile=new CalcFile();
     }
 
     @Before
     void init(){
-        calcFirstFile=new CalcFirstFile();
+        calcFirstFile=new CalcFile();
     }
     @After
     void clear(){

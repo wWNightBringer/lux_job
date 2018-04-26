@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CalcFirstFile implements ResultRepository {
+public class CalcFile implements ResultRepository {
     private Map<Integer, String> wordsOfLine;
 
     @Override
