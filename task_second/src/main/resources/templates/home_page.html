@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List page</title>
+</head>
+<body>
+<form th:action="@{/home_page}" method="post">
+    <table>
+        <caption><h2>RESULTS</h2></caption>
+
+        <!--/*@thymesVar id="values" type="job.bespalov.demo.controller.MainController"*/-->
+        <tr>
+            <th>File name</th>
+            <th>Line</th>
+            <th>Longest word</th>
+            <th>Shortest word</th>
+            <th>Length line</th>
+            <th>Average word</th>
+        </tr>
+        <tr th:each="value:${values}">
+            <td class="value" th:utext="${value.tablenamespaceByTitleId.titleFile}">...</td>
+            <td class="value" th:utext="${value.line}">...</td>
+            <td class="value" th:utext="${value.longestWord}">...</td>
+            <td class="value" th:utext="${value.shortestWord}">...</td>
+            <td class="value" th:utext="${value.lengthLine}">...</td>
+            <td class="value" th:utext="${value.averageWord}">...</td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

@@ -1,9 +1,9 @@
-package job.bespalov.logic;
+package job.bespalov.demo.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "values_table", schema = "job_lux")
+@Table(name = "values_table", schema = "job_lux", catalog = "")
 public class ValuesTableEntity {
     private int numberLine;
     private String line;
@@ -12,6 +12,8 @@ public class ValuesTableEntity {
     private int lengthLine;
     private int averageWord;
     private TablenamespaceEntity tablenamespaceByTitleId;
+    private String id;
+    private int idValue;
 
     @Basic
     @Column(name = "number_line", nullable = false)
@@ -74,11 +76,11 @@ public class ValuesTableEntity {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
 
-        ValuesTableEntity that = (ValuesTableEntity) o;
+        ValuesTableEntity that = (ValuesTableEntity) object;
 
         if (numberLine != that.numberLine) return false;
         if (lengthLine != that.lengthLine) return false;
@@ -111,14 +113,13 @@ public class ValuesTableEntity {
         this.tablenamespaceByTitleId = tablenamespaceByTitleId;
     }
 
-    private String id;
-
     @Id
-    public String getId() {
-        return id;
+    @Column(name = "Id_value", nullable = false)
+    public int getIdValue() {
+        return idValue;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdValue(int idValue) {
+        this.idValue = idValue;
     }
 }

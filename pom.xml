@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>task_one</module>
-        <module>task_two</module>
+
     </modules>
 
 

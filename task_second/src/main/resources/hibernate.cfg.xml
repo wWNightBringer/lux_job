@@ -4,11 +4,12 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://localhost:3306/calendar</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/job_lux</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <mapping class="job.bespalov.logic.TablenamespaceEntity"/>
-      <mapping class="job.bespalov.logic.ValuesTableEntity"/>
-    <mapping class="job.bespalov.logic.ArderEntity"/>
+      <mapping class="job.bespalov.demo.model.TablenamespaceEntity"/>
+    <mapping class="job.bespalov.demo.model.ValuesTableEntity"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
