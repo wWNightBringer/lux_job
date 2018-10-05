@@ -17,9 +17,9 @@ class FileReadingTest {
 
     @Test
     void getPaths() {
-        Path expect= Paths.get("task_one/src/main/resources/fileOne.txt");
+        Path expect= Paths.get("task_one/src/main/resources/File_1");
         assertTrue(fileReading.getPaths().contains(expect));
-        assertEquals(expect,fileReading.getPaths().get(0));
+        assertEquals(expect.toString(), "task_one/src/main/resources/File_2");
     }
 
 }
