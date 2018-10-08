@@ -6,8 +6,8 @@ import java.nio.file.Path;
 import java.util.List;
 
 public interface ResultRepository {
-    String longestLine(String line) throws IOException;
-    String shortestLine(String line) throws IOException;
-    int lineLength(String line) throws IOException;
-    int averageWord(String line) throws IOException;
+    String getLongestWord(String line) throws IOException;
+    String getShortestWord(String line) throws IOException;
+    int getLengthWord(String line) throws IOException;
+    int getAverageWord(String line) throws IOException;
 }

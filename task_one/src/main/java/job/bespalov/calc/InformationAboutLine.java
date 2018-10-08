@@ -11,11 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CalcFile implements ResultRepository {
+public class InformationAboutLine implements ResultRepository {
     private Map<Integer, String> wordsOfLine;
 
     @Override
-    public String longestLine(String line) throws IOException {
+    public String getLongestWord(String line) throws IOException {
         wordsOfLine = new HashMap<>();
         for (String words : line.split(" ")) {
             wordsOfLine.put(words.length(), words);
@@ -33,7 +33,7 @@ public class CalcFile implements ResultRepository {
     }
 
     @Override
-    public String shortestLine(String line) throws IOException {
+    public String getShortestWord(String line) throws IOException {
         wordsOfLine = new HashMap<>();
         for (String words : line.split(" ")) {
             wordsOfLine.put(words.length(), words);
@@ -51,12 +51,12 @@ public class CalcFile implements ResultRepository {
     }
 
     @Override
-    public int lineLength(String line) throws IOException {
+    public int getLengthWord(String line) throws IOException {
         return line.length();
     }
 
     @Override
-    public int averageWord(String line) throws IOException {
+    public int getAverageWord(String line) throws IOException {
         int averageLength = 0;
         int num = 0;
         for (String words : line.split(" ")) {

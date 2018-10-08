@@ -1,7 +1,14 @@
 package job.bespalov.demo.model;
 
-import javax.persistence.*;
+import job.bespalov.demo.dao.ValuesDAO;
 
+import javax.persistence.*;
+/**
+ * Create class {@link TablenamespaceEntity} and used hibernate
+ *
+ * @author Bespalov Andrew
+ * @version 1.0
+ */
 @Entity
 @Table(name = "tablenamespace", schema = "job_lux", catalog = "")
 public class TablenamespaceEntity {

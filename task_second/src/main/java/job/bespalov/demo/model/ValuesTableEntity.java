@@ -1,7 +1,12 @@
 package job.bespalov.demo.model;
 
 import javax.persistence.*;
-
+/**
+ * Create class {@link ValuesTableEntity} and used hibernate
+ *
+ * @author Bespalov Andrew
+ * @version 1.0
+ */
 @Entity
 @Table(name = "values_table", schema = "job_lux", catalog = "")
 public class ValuesTableEntity {

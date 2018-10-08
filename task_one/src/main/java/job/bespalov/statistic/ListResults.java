@@ -1,6 +1,6 @@
 package job.bespalov.statistic;
 
-import job.bespalov.calc.CalcFile;
+import job.bespalov.calc.InformationAboutLine;
 import job.bespalov.jd.DatabaseByAct;
 import job.bespalov.repository.ResultRepository;
 
@@ -28,7 +28,7 @@ public class ListResults {
         titles = new ArrayList<>();
         actionByDatabase = new DatabaseByAct();
         list.clear();
-        list.add(new CalcFile());
+        list.add(new InformationAboutLine());
     }
 
     public boolean showResult() throws IOException, SQLException {
@@ -45,13 +45,13 @@ public class ListResults {
                     while (bufferedReader.ready()) {
                         String line = bufferedReader.readLine();
 
-                        System.out.println("Longest word - " + resultRepository.longestLine(line));
+                        System.out.println("Longest word - " + resultRepository.getLongestWord(line));
 
-                        System.out.println("Shortest word - " + resultRepository.shortestLine(line));
+                        System.out.println("Shortest word - " + resultRepository.getShortestWord(line));
 
-                        System.out.println("Line length - " + resultRepository.lineLength(line));
+                        System.out.println("Line length - " + resultRepository.getLengthWord(line));
 
-                        System.out.println("Average word - " + resultRepository.averageWord(line) + "\n");
+                        System.out.println("Average word - " + resultRepository.getAverageWord(line) + "\n");
 
                     }
                 }
@@ -78,8 +78,8 @@ public class ListResults {
             for (ResultRepository resultRepository : list) {
                 while (bufferedReader.ready()) {
                     String line = bufferedReader.readLine();
-                    actionByDatabase.addToTableValues(actionByDatabase.getIdByTitle(title), countLine, line, resultRepository.longestLine(line),
-                            resultRepository.shortestLine(line), resultRepository.lineLength(line), resultRepository.averageWord(line));
+                    actionByDatabase.addToTableValues(actionByDatabase.getIdByTitle(title), countLine, line, resultRepository.getLongestWord(line),
+                            resultRepository.getShortestWord(line), resultRepository.getLengthWord(line), resultRepository.getAverageWord(line));
                     countLine++;
                 }
             }
